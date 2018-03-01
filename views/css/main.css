@@ -6,34 +6,27 @@ html, body {
 }
 body {
   align-items:center;
-  background: #ECDCC9;
+  background: #D0B8AC;
 }
 
 header {
   padding: 150px 0 100px;
 }
 section {
-  padding: 150px 0;
+  padding: 20px 0;
 }
 footer{
   padding-top: 60px;
 }
-
-.section-custom {
-  padding: 20px 0;
-}
-
 nav{
   height: 100px;
 }
-
 nav a {
   margin-left: .8rem;
   margin-right: .8rem;
 }
-
-.box-shadow--6dp {
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2)
+span.tab-space {
+  padding-left:2em;
 }
 
 .header-nightsky {
@@ -43,97 +36,54 @@ nav a {
     background-position: bottom;
     padding-bottom: 50px;
 }
-
 .navbar-brand
 {
   font-size: 30px;
   margin: 0px;
   margin-left: 2rem;
 }
-
 .footer-info{
   height: 60px;
   display:flex;
   align-items:center;
 }
 
-.field-label-responsive {
-    padding-top: .5rem;
-    text-align: right;
-  }
-
-.bottomdiv {
-    position:absolute;
-    left:3rem;
-    bottom:0;
-  }
-  .error-template {
-    padding: 40px 15px;
-    text-align: center;
-  }
-  .error-actions {
-    margin-top:15px;
-    margin-bottom:15px;
-  }
-  .error-actions .btn {
-     margin-right:10px;
-   }
-
-/*-----------------------Profile CSS----------------------------------*/
-.main-section{
-	border:1px solid #138496;
-	background-color: #fff;
+/*-----------------------RESULT CSS----------------------------------*/
+.search-result {
+  background: #D1BDB3;
+  margin-top: 20px;
 }
-.profile-header{
-	background-color: #212529;
-	height:150px;
+.search-result .col-md-2 {
+  border-right: 1px dotted #ccc; min-height: 140px;
 }
-.user-detail{
-	margin:-50px 0px 30px 0px;
-}
-.user-detail img{
-	height:100px;
-	width:100px;
-}
-.user-detail h5{
-	margin:15px 0px 5px 0px;
-}
-.user-social-detail{
-	padding:15px 0px;
-	background-color: #212529;
-}
-
-.custom-center{
-  display:flex;
-  align-items:center;
-}
-/*-----------------------Profile CSS----------------------------------*/
-
-.table-striped>tbody>tr>td,
-.table-striped>tbody>tr>th {
-	background-color: #F7F7F2;
-}
-.table-striped>tbody>tr:nth-child(odd)>td,
-.table-striped>tbody>tr:nth-child(odd)>th {
-	background-color: #CDDDDD;
-}
-
-ul.share-buttons{
+.search-result ul {
+  padding-left: 0 !important;
   list-style: none;
-  padding: 0;
 }
-
-ul.share-buttons li{
-  display: inline;
+.search-result ul li {
+  font: 400 normal .85em "Roboto", sans-serif;
+  line-height: 30px;
 }
-
-ul.share-buttons .sr-only{
-  position: absolute;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
+.search-result ul li i {
+  padding-right: 5px;
 }
+.search-result .col-md-7 {
+  position: relative;
+}
+.search-result h3 {
+  font: 500 normal 1.375em "Roboto",sans-serif;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+.search-result h3 > a, .search-result i {
+  color: #248dc1 !important;
+}
+.search-result p {
+  font: normal normal 1.125em "Roboto",sans-serif;
+}
+.search-result span.border {
+  display: block; width: 97%;
+  margin: 0 15px;
+  border-bottom: 1px dotted #ccc;
+}
+/*-----------------------RESULT CSS----------------------------------*/

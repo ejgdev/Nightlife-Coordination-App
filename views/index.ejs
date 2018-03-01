@@ -7,20 +7,77 @@
 		<!-- Navigation -->
 		<% include ./partials/header %>
 		<!-- End Navigation -->
-		<!--
+
 		<header class="header-nightsky">
 			<div class="container text-center">
 				<div>
-            <h1>Welcome to Voting App</h1>
-						<h5>This is a proyect for Freecodecamp.</h5>
-            <p class="lead">Below are all the polls, select a poll to see the results and you can vote too.</p>
-						<a href="https://github.com/edlobox/Nightlife-Coordination-App" class="btn btn-outline-light" role="button" aria-disabled="true">Learn more about</a>
-						<hr>
-						<P class="lead"> If you want create a poll, you need be logged in.</p>
+					<div class="col-md-12 text-center">
+							<h1>Plans Tonight?</h1>
+							<h1><i class="fas fa-map-marker-alt"></i>
+							<i class="fas fa-taxi"></i>
+							<i class="fas fa-glass-martini"></i></h1>
+							<p> See which bars are hoppin' tonight and RSVP ahead of time!</p>
+					</div>
+				</div><!-- close row -->
+				<form class="form-horizontal" role="form" method="POST" action="/">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
+								<input type="text" name="location" class="form-control" id="location" placeholder="Where your at?" required autofocus>
+								<button type="submit" class="btn btn-dark">Go!</button>
+							</div>
+						</div>
+					</div>
+				</div><!-- close row -->
+				</form>
         </div>
 			</div>
 		</header>
-		-->
+
+	<section id="bodyBars">
+		<div class="container">
+			<% if (data !== null) { %>
+
+				<div class="container">
+					<section class="col-xs-12 col-sm-6 col-md-12">
+				<% for(var i=0; i<data.length; i++){ %>
+
+							<article class="search-result row">
+								<div class="col-xs-12 col-sm-12 col-md-3">
+									<% if (data[i].image_url !== '') { %>
+									<img src="<%= data[i].image_url %>" alt="<%= data[i].name %>" height="200" width="200"/>
+									<%} else {%>
+									<img src="/views/img/yelp/business.png" alt="<%= data[i].name %>" height="200" width="200"/>
+									<% } %>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-2">
+									<ul class="meta-search">
+										<% if (data[i].phone !== '') { %>
+										<li><i class="fas fa-phone-square"></i></i> <span><%= data[i].phone %></span></li>
+										<%} else {%>
+										<li><i class="fas fa-phone-square"></i></i> <span>Unknown</span></li>
+										<% } %>
+										<li><i class="fas fa-map-marker"></i> <span><%= data[i].location.address1 %></span></li>
+										<li><i class="fas fa-globe"></i> <span><%= data[i].location.city %> - <%= data[i].location.state %>, <%= data[i].location.country %></span></li>
+									</ul>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+									<h3><a href="<%= data[i].url %>" title=""><%= data[i].name %></a></h3>
+									<img src="/views/img/yelp/yelp_stars/android/drawable-mdpi/regular/stars_regular_<%= data[i].rating %>.png" alt="<%= data[i].rating %>"/>
+									<p><%= data[i].review_count %> reviews</p>
+									<p>Price range: <i class="far fa-money-bill-alt"></i> <%= data[i].price || "unknown" %></p>
+								</div>
+								<span class="clearfix borda"></span>
+							</article>
+
+				<% } %>
+				</section>
+			</div>
+			<% } %>
+		</div>
+	</section>
+
 		<!-- The Poll's List -->
 		  <% include ./partials/body-partial %>
 		<!-- Footer -->

@@ -1,16 +1,19 @@
 'use strict';
 
 var path = process.cwd();
+const listIndex = require(path + '/app/controllers/list.js');
 
 module.exports = function (app, passport) {
 
 	app.route('/')
-		.get(function (req, res) {
+		.get(function (req, res) {			
 			res.render('index.ejs',{
 	      userLogged: req.isAuthenticated(),
-	      user: req.user
+	      user: req.user,
+				data: null
 	    });
-		});
+		})
+		.post((req, res) => listIndex(req, res));
 
 		app.route('/login')
 			.get((req, res) => res.redirect('/'));
@@ -20,11 +23,6 @@ module.exports = function (app, passport) {
 				req.logout();
 				res.redirect('/');
 			});
-
-	app.route('/profile')
-		.get(isLoggedIn, function (req, res) {
-			res.sendFile(path + '/public/profile.html');
-		});
 
 	app.route('/auth/github')
 		.get(passport.authenticate('github'));
