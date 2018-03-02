@@ -21,19 +21,18 @@ app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
 app.use('/views', express.static(process.cwd() + '/views'));
 app.use('/common', express.static(process.cwd() + '/app/common'));
 
+app.use(session({
+	secret: 'secretClementine',
+	resave: false,
+	saveUninitialized: true,
+	cookie: {
+        secure: false, // Secure is Recommeneded, However it requires an HTTPS enabled website (SSL Certificate)
+        maxAge: 664000000 // 7 Days in miliseconds
+    }
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.set('trust proxy', 1) // trust first proxy
-app.use(session({
-  secret: 'night app awesome',
-  resave: true,
-  saveUninitialized: true,
-  cookie: {
-		secure: true,
-		maxAge: 24*60*60*1000,  // 24 hours
-	}
-}));
 
 routes(app, passport);
 

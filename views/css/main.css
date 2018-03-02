@@ -49,6 +49,16 @@ span.tab-space {
 }
 
 /*-----------------------RESULT CSS----------------------------------*/
+.reservation{
+  padding-top: 30px;
+  text-align: center;
+  border-left: 1px dotted #ccc; min-height: 140px;
+}
+.reservation a{
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
 .search-result {
   background: #D1BDB3;
   margin-top: 20px;

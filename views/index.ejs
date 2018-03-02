@@ -24,8 +24,8 @@
 					<div class="col-md-12">
 						<div class="form-group">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-								<input type="text" name="location" class="form-control" id="location" placeholder="Where your at?" required autofocus>
-								<button type="submit" class="btn btn-dark">Go!</button>
+								<input type="text" name="location" class="form-control" id="location" placeholder="Where your at?" value="<%= inputdata %>"  required autofocus>
+								<button type="submit" class="btn btn-secondary">Go!</button>
 							</div>
 						</div>
 					</div>
@@ -62,11 +62,19 @@
 										<li><i class="fas fa-globe"></i> <span><%= data[i].location.city %> - <%= data[i].location.state %>, <%= data[i].location.country %></span></li>
 									</ul>
 								</div>
-								<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+								<div class="col-xs-12 col-sm-12 col-md-4">
 									<h3><a href="<%= data[i].url %>" title=""><%= data[i].name %></a></h3>
 									<img src="/views/img/yelp/yelp_stars/android/drawable-mdpi/regular/stars_regular_<%= data[i].rating %>.png" alt="<%= data[i].rating %>"/>
 									<p><%= data[i].review_count %> reviews</p>
 									<p>Price range: <i class="far fa-money-bill-alt"></i> <%= data[i].price || "unknown" %></p>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-3 reservation">
+									<h6>Plan For Tonight?</h6>
+									<% if (userLogged) { %>
+										<a href="" class="btn btn-info" role="button">Going!</a>
+									<% } else { %>
+											<a href="/auth/github" class="btn btn-danger" role="button">Login!</a>
+									<% } %>
 								</div>
 								<span class="clearfix borda"></span>
 							</article>
