@@ -70,8 +70,9 @@
 								</div>
 								<div class="col-xs-12 col-sm-12 col-md-3 reservation">
 									<h6>Plan For Tonight?</h6>
+									
 									<% if (userLogged) { %>
-										<a href="" class="btn btn-info" role="button">Going!</a>
+										<a href="/api/<%= data[i].id %>" class="btn btn-info" role="button">Going!</a>
 									<% } else { %>
 											<a href="/auth/github" class="btn btn-danger" role="button">Login!</a>
 									<% } %>
