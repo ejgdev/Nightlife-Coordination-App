@@ -17,7 +17,6 @@ const updateDirectory = (req, res) => {
           if (err)
             throw err;
         });
-        console.log("OPCION-1" + newPlace);
         res.redirect("/");
       }
       else {
@@ -28,7 +27,6 @@ const updateDirectory = (req, res) => {
             if (err)
               throw err;
           });
-          console.log("OPCION-2" + data);
           res.redirect("/");
         }
         else {
@@ -37,7 +35,6 @@ const updateDirectory = (req, res) => {
             if (err)
               throw err;
           });
-          console.log("OPCION-3" + data);
           res.redirect("/");
         }
       }

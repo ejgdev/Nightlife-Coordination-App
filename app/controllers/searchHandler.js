@@ -1,8 +1,10 @@
 'use strict';
 
+const Place = require('../models/places');
+
 module.exports = (req, res) => handlerIndex(req, res);
 
-const handlerIndex = (req, res) => {
+const handlerIndex =  async (req, res) => {
   if(!req.session.data){
     res.render('index.ejs',{
       userLogged: req.isAuthenticated(),
@@ -13,6 +15,7 @@ const handlerIndex = (req, res) => {
     });
   }
   else{
+    await findPlaces(req, res, req.session.data, req.body.location);
     res.render('index.ejs',{
       userLogged: req.isAuthenticated(),
       user: req.user,
@@ -22,3 +25,27 @@ const handlerIndex = (req, res) => {
     });
   }
 }
+
+const findPlaces = async (req, res, data, location) => {
+ req.session.places = [];
+ for (let value of data){
+   await Place.findOne({ 'placeId': value.id }, function(err,info){
+     if(err)
+       console.log("ERROR");
+     else {
+       if (info) {
+         let userGoing;
+         if(req.user)
+           userGoing = info.users.includes(req.user.id);
+         else
+           userGoing = false;
+
+         req.session.places.push(userGoing);
+       }
+       else {
+         req.session.places.push(false);
+       }
+     }
+ });
+ }
+};

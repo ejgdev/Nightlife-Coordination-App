@@ -43,6 +43,7 @@ const homeHandler  = (req, res) => {
 	else{
 		delete req.session.location;
 		delete req.session.data;
+		delete req.session.places;
 		res.redirect('/');
 	}
 }

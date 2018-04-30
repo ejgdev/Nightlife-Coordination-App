@@ -70,11 +70,17 @@
 								</div>
 								<div class="col-xs-12 col-sm-12 col-md-3 reservation">
 									<h6>Plan For Tonight?</h6>
-									
+
 									<% if (userLogged) { %>
-										<a href="/api/<%= data[i].id %>" class="btn btn-info" role="button">Going!</a>
+										<% if (place[i]) { %>
+											<a href="/api/<%= data[i].id %>" class="btn btn-danger" role="button">Cancel!</a>
+											<p class="font-italic font-weight-light">Want cancel your reservation?</p>
+										<% } else { %>
+											<a href="/api/<%= data[i].id %>" class="btn btn-info" role="button">Going!</a>
+											<p class="font-italic font-weight-light">Do you want to go?</p>
+										<% } %>
 									<% } else { %>
-											<a href="/auth/github" class="btn btn-danger" role="button">Login!</a>
+											<a href="/auth/github" class="btn btn-warning" role="button">Login!</a>
 									<% } %>
 								</div>
 								<span class="clearfix borda"></span>
