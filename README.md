@@ -21,7 +21,7 @@ Here are the specific user stories you should implement for this project:
 Try using the **[Yelp API](https://www.yelp.com/developers/documentation/v2/overview)** to find venues in the cities your users search for. If you use Yelp's API, be sure to mention so in your app
 
 ### Links
-[https://powerful-brook-68149.herokuapp.com/](https://powerful-brook-68149.herokuapp.com/)
+[https://secret-fjord-49592.herokuapp.com/](https://secret-fjord-49592.herokuapp.com/)
 
 [https://github.com/edlobox/Nightlife-Coordination-App](https://github.com/edlobox/Nightlife-Coordination-App)
 
