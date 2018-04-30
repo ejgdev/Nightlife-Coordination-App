@@ -1,4 +1,4 @@
-# Voting App by edlobox
+# Nightlife Coordination App by edlobox
 
 ## Objective:
 Build a full stack JavaScript app that is functionally similar to **[this page](https://yasser-nightlife-app.herokuapp.com/)** and deploy it to Heroku.
