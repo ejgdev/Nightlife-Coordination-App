@@ -17,7 +17,7 @@ Click in the download button and get the .zip file. Extract the contents of the 
 Or can clone this repository, just copy the git url and open your terminal and run git clone + repository url:
 
 ```
-git clone https://github.com/edlobox/Nightlife-Coordination-App.git
+git clone https://github.com/ejgdev/Nightlife-Coordination-App.git
 ```
 
 ### Prerequisites
@@ -108,6 +108,6 @@ Here are the specific user stories you should implement for this project:
 Try using the **[Yelp API](https://www.yelp.com/developers/documentation/v2/overview)** to find venues in the cities your users search for. If you use Yelp's API, be sure to mention so in your app
 
 #### Links
-[https://secret-fjord-49592.herokuapp.com/](https://secret-fjord-49592.herokuapp.com/)
+[Demo App](https://secret-fjord-49592.herokuapp.com/)
 
-[https://github.com/edlobox/Nightlife-Coordination-App](https://github.com/edlobox/Nightlife-Coordination-App)
+[Github](https://github.com/ejgdev/Nightlife-Coordination-App)
